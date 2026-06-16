@@ -577,10 +577,23 @@ a { color: inherit; }
     display: none;
     align-items: center;
     justify-content: center;
-    background: rgba(20, 14, 15, 0.92);
+    /* Se elimina el background oscuro sólido de aquí */
     padding: 40px;
     opacity: 0;
     transition: opacity 0.3s var(--ease);
+    overflow: hidden; /* Evita scroll si el fondo se expande */
+}
+
+/* ESTA ES LA MAGIA DEL BLUR PREMIUM */
+.lightbox-bg {
+    position: absolute;
+    /* inset negativo para que los bordes difuminados queden fuera de la pantalla */
+    inset: -10%; 
+    background-size: cover;
+    background-position: center;
+    /* Filtros: Desenfoque alto, oscurecimiento y un boost de color */
+    filter: blur(40px) brightness(0.35) saturate(1.3);
+    z-index: -1;
 }
 
 .lightbox.is-open {
@@ -592,9 +605,11 @@ a { color: inherit; }
     max-width: 90vw;
     max-height: 88vh;
     border-radius: var(--radius-md);
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7); /* Sombra más fuerte para contrastar */
     transform: scale(0.96);
     transition: transform 0.3s var(--ease);
+    position: relative;
+    z-index: 10;
 }
 
 .lightbox.is-open .lightbox-image {
@@ -610,13 +625,15 @@ a { color: inherit; }
     border: none;
     border-radius: 50%;
     background: rgba(251, 241, 237, 0.15);
-    color: var(--color-bg);
+    color: var(--color-surface); /* Letra blanca para contrastar mejor */
     font-size: 18px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background 0.25s var(--ease);
+    z-index: 20;
+    backdrop-filter: blur(4px); /* Pequeño blur al botón también */
 }
 
 .lightbox-close:hover {
