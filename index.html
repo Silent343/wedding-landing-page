@@ -68,6 +68,12 @@
     </section>
 
     <section class="about">
+        <div class="decor-blobs decor-blobs--about" aria-hidden="true">
+            <svg viewBox="0 0 680 420" preserveAspectRatio="xMidYMid slice">
+                <path class="blob-shape blob-b" d="M470,110 C465,55 530,30 575,55 C620,80 615,150 565,165 C515,180 475,160 470,110 Z" />
+            </svg>
+        </div>
+
         <div class="about-container">
             <div class="about-image-wrapper">
                 <img class="about-image" src="assets/prt5.jpg" alt="Andrea Torres, wedding planner">
@@ -83,19 +89,54 @@
             </div>
         </div>
 
-        <div class="carousel-wrapper">
+        <div class="moments-wrapper">
             <p class="section-eyebrow">Momentos que hemos vivido juntas</p>
-            <div class="carousel">
-                <div class="carousel-track">
-                    <img src="assets/iuanf (1).jpeg" alt="Momento de boda" class="carousel-slide">
-                    <img src="assets/va5R.jpeg" alt="Momento de boda" class="carousel-slide">
-                    <img src="assets/iuanf (5).jpg" alt="Momento de boda" class="carousel-slide">
-                    <img src="assets/iuanf (2).jpg" alt="Momento de boda" class="carousel-slide">
+            <div class="moments-marquee" id="moments-marquee">
+                <div class="moments-track" id="moments-track">
+                    <div class="moment-card"><img src="assets/iuanf (1).jpeg" alt="Momento de boda" loading="lazy"></div>
+                    <div class="moment-card moment-card--tall"><img src="assets/va5R.jpeg" alt="Momento de boda" loading="lazy"></div>
+                    <div class="moment-card"><img src="assets/iuanf (5).jpg" alt="Momento de boda" loading="lazy"></div>
+                    <div class="moment-card moment-card--tall"><img src="assets/iuanf (2).jpg" alt="Momento de boda" loading="lazy"></div>
+                    <div class="moment-card"><img src="assets/bo98 (1).jpg" alt="Momento de boda" loading="lazy"></div>
+                    <div class="moment-card moment-card--tall"><img src="assets/prt89.jpg" alt="Momento de boda" loading="lazy"></div>
                 </div>
-                <div class="carousel-controls">
-                    <button class="carousel-btn prev-btn" aria-label="Foto anterior"><i class="fa-solid fa-chevron-left"></i></button>
-                    <button class="carousel-btn next-btn" aria-label="Foto siguiente"><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
+            </div>
+            <p class="moments-hint"><i class="fa-solid fa-arrows-left-right" aria-hidden="true"></i> Arrastra para explorar</p>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="decor-blobs decor-blobs--process" aria-hidden="true">
+            <svg viewBox="0 0 680 420" preserveAspectRatio="xMidYMid slice">
+                <path class="blob-shape blob-a" d="M70,130 C70,70 130,40 180,55 C230,70 250,120 220,170 C190,220 110,225 80,185 C55,150 65,150 70,130 Z" />
+                <path class="blob-shape blob-b" d="M470,110 C465,55 530,30 575,55 C620,80 615,150 565,165 C515,180 475,160 470,110 Z" />
+                <path class="blob-shape blob-c" d="M555,350 C552,320 585,300 615,315 C645,330 645,370 615,385 C585,400 558,380 555,350 Z" />
+            </svg>
+        </div>
+
+        <p class="section-eyebrow process-eyebrow">Cómo trabajamos</p>
+        <h2 class="process-title">De la primera idea al último brindis</h2>
+
+        <div class="process-steps">
+            <div class="process-step">
+                <span class="process-number">01</span>
+                <h3 class="process-step-title">Primera llamada</h3>
+                <p class="process-step-text">Conversamos sobre tu visión, presupuesto y estilo. Sin compromiso — solo para conocernos.</p>
+            </div>
+            <div class="process-step">
+                <span class="process-number">02</span>
+                <h3 class="process-step-title">Propuesta y plan</h3>
+                <p class="process-step-text">Diseño un plan a tu medida: proveedores, cronograma y presupuesto detallado por partida.</p>
+            </div>
+            <div class="process-step">
+                <span class="process-number">03</span>
+                <h3 class="process-step-title">Coordinación total</h3>
+                <p class="process-step-text">Gestiono cada proveedor, contrato y detalle. Tú apruebas, yo me encargo del resto.</p>
+            </div>
+            <div class="process-step">
+                <span class="process-number">04</span>
+                <h3 class="process-step-title">El gran día</h3>
+                <p class="process-step-text">Estoy presente desde el montaje hasta el cierre, resolviendo cualquier imprevisto en silencio.</p>
             </div>
         </div>
     </section>
@@ -131,6 +172,14 @@
     </section>
 
     <section id="contact" class="contact">
+        <div class="decor-blobs decor-blobs--contact" aria-hidden="true">
+            <svg viewBox="0 0 680 420" preserveAspectRatio="xMidYMid slice">
+                <path class="blob-shape blob-d" d="M250,320 C245,270 300,240 350,250 C400,260 420,310 395,350 C370,390 300,395 270,365 C245,340 250,340 250,320 Z" />
+                <path class="blob-shape blob-a" d="M10,330 C0,210 130,140 240,175 C350,210 390,330 320,400 C250,470 80,460 30,400 C-5,360 12,360 10,330 Z" />
+                <path class="blob-shape blob-b" d="M530,60 C525,15 580,-5 615,15 C650,35 648,85 608,100 C568,115 535,95 530,60 Z" />
+            </svg>
+        </div>
+
         <div class="contact-container animate__animated animate__fadeIn">
             <div class="contact-intro">
                 <p class="section-eyebrow">Empecemos a planear</p>
@@ -223,7 +272,7 @@
     </footer>
 
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>

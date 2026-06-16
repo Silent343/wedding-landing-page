@@ -288,6 +288,8 @@ a { color: inherit; }
 .about {
     background-color: var(--color-bg-alt);
     padding: 70px 6% 90px;
+    position: relative;
+    overflow: hidden;
 }
 
 .about-container {
@@ -297,12 +299,15 @@ a { color: inherit; }
     max-width: 1160px;
     margin: 0 auto;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
 }
 
 .about-image-wrapper {
     flex: 1 1 320px;
     display: flex;
     justify-content: center;
+    perspective: 1000px;
 }
 
 .about-image {
@@ -312,6 +317,8 @@ a { color: inherit; }
     box-shadow: 0 22px 50px rgba(61, 43, 46, 0.18);
     object-fit: cover;
     aspect-ratio: 3/4;
+    will-change: transform;
+    transition: transform 0.1s linear;
 }
 
 .about-description {
@@ -354,62 +361,159 @@ a { color: inherit; }
 }
 
 /* =========================================
-   5. CAROUSEL
+   5. MOMENTS MARQUEE (carrusel de tarjetas)
    ========================================= */
-.carousel-wrapper {
+.moments-wrapper {
     margin-top: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+.moments-wrapper .section-eyebrow {
     text-align: center;
 }
 
-.carousel {
-    width: min(800px, 90vw);
-    margin: 0 auto;
-    border-radius: var(--radius-lg);
+.moments-marquee {
+    width: 100%;
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(61, 43, 46, 0.16);
-    aspect-ratio: 16/10;
-    position: relative;
+    cursor: grab;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
 }
 
-.carousel-track {
+.moments-marquee.is-dragging {
+    cursor: grabbing;
+}
+
+.moments-track {
     display: flex;
-    height: 100%;
-    transition: transform 0.8s var(--ease);
+    align-items: center;
+    gap: 22px;
+    width: max-content;
+    padding: 10px 6px 30px;
+    will-change: transform;
 }
 
-.carousel-slide {
+.moment-card {
+    flex-shrink: 0;
+    width: 260px;
+    height: 320px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(61, 43, 46, 0.16);
+    transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+    user-select: none;
+}
+
+.moment-card--tall {
+    height: 380px;
+    margin-top: -30px;
+}
+
+.moment-card img {
     width: 100%;
     height: 100%;
-    flex-shrink: 0;
     object-fit: cover;
+    pointer-events: none;
+    -webkit-user-drag: none;
 }
 
-.carousel-controls {
-    position: absolute;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
+.moment-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 50px rgba(61, 43, 46, 0.24);
 }
 
-.carousel-btn {
-    width: 38px;
-    height: 38px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(251, 241, 237, 0.9);
-    color: var(--color-ink);
-    cursor: pointer;
+.moments-hint {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--color-ink-soft);
+    opacity: 0.7;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.25s var(--ease);
+    gap: 8px;
 }
 
-.carousel-btn:hover {
-    background: var(--color-gold);
-    color: var(--color-bg);
+/* =========================================
+   5b. PROCESS SECTION ("Cómo trabajamos")
+   ========================================= */
+.process {
+    background: var(--color-bg);
+    padding: 100px 6%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.process-eyebrow {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.process-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(30px, 4vw, 44px);
+    color: var(--color-ink);
+    max-width: 640px;
+    margin: 0 auto 64px;
+    position: relative;
+    z-index: 2;
+}
+
+.process-steps {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.process-steps::before {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 6%;
+    right: 6%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-gold) 15%, var(--color-gold) 85%, transparent);
+    opacity: 0.45;
+}
+
+.process-step {
+    position: relative;
+    padding: 0 22px;
+    text-align: left;
+}
+
+.process-number {
+    display: block;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 30px;
+    color: var(--color-gold);
+    margin-bottom: 18px;
+    background: var(--color-bg);
+    position: relative;
+    z-index: 2;
+}
+
+.process-step-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 21px;
+    color: var(--color-ink);
+    margin-bottom: 10px;
+}
+
+.process-step-text {
+    font-size: 14.5px;
+    color: var(--color-ink-soft);
+    line-height: 1.65;
 }
 
 /* =========================================
@@ -547,6 +651,8 @@ a { color: inherit; }
 .contact {
     background: var(--color-bg-alt);
     padding: 90px 6%;
+    position: relative;
+    overflow: hidden;
 }
 
 .contact-container {
@@ -556,6 +662,8 @@ a { color: inherit; }
     border-radius: var(--radius-lg);
     padding: 56px;
     box-shadow: 0 30px 70px rgba(61, 43, 46, 0.12);
+    position: relative;
+    z-index: 2;
 }
 
 .contact-intro {
@@ -768,12 +876,59 @@ a { color: inherit; }
 }
 
 /* =========================================
-   9. MEDIA QUERIES (RESPONSIVE)
+   9b. DECORATIVE BLOBS (fondos orgánicos)
+   ========================================= */
+.decor-blobs {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.decor-blobs svg {
+    width: 100%;
+    height: 100%;
+}
+
+.blob-shape {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.blob-a   { fill: var(--color-blush);      opacity: 0.55; animation: blob-float-a 9s ease-in-out infinite; }
+.blob-b   { fill: var(--color-gold);       opacity: 0.32; animation: blob-float-b 11s ease-in-out infinite; }
+.blob-c   { fill: var(--color-blush-dark); opacity: 0.45; animation: blob-float-c 13s ease-in-out infinite; }
+.blob-d   { fill: var(--color-gold-light); opacity: 0.4;  animation: blob-float-a 10s ease-in-out infinite; animation-delay: -4s; }
+
+@keyframes blob-float-a {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50%      { transform: translate(10px, -14px) scale(1.04); }
+}
+@keyframes blob-float-b {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50%      { transform: translate(-12px, 10px) scale(0.96); }
+}
+@keyframes blob-float-c {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50%      { transform: translate(6px, 8px) rotate(4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .blob-a, .blob-b, .blob-c, .blob-d { animation: none; }
+}
+
+@media (max-width: 768px) {
+    .decor-blobs { opacity: 0.6; }
+}
+/* =========================================
+   10. MEDIA QUERIES (RESPONSIVE)
    ========================================= */
 @media (max-width: 900px) {
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .gallery-item--wide { grid-column: span 2; }
     .footer-content { grid-template-columns: 1fr; gap: 32px; }
+    .process-steps { grid-template-columns: repeat(2, 1fr); row-gap: 48px; }
+    .process-steps::before { display: none; }
 }
 
 @media (max-width: 768px) {
@@ -807,6 +962,14 @@ a { color: inherit; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .gallery-item { height: 160px; }
     .gallery-item--tall { height: 100%; }
+
+    .moment-card { width: 200px; height: 250px; }
+    .moment-card--tall { height: 300px; }
+
+    .process { padding: 70px 6%; }
+    .process-steps { grid-template-columns: 1fr; gap: 36px; text-align: center; }
+    .process-step { text-align: center; padding: 0; }
+    .process-number { background: transparent; }
 
     .contact-container { padding: 32px 24px; }
     .form-row { flex-direction: column; gap: 0; }

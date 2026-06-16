@@ -28,51 +28,93 @@ if (typeof ScrollReveal !== "undefined") {
 
     sr.reveal('.scroll-reveal-item', { duration: 900, interval: 60 });
     sr.reveal('.about-image-wrapper', { duration: 900 });
-    sr.reveal('.carousel', { duration: 900 });
+    sr.reveal('.moments-wrapper', { duration: 900 });
+    sr.reveal('.process-step', { duration: 700, interval: 100 });
 }
 
 /* =========================================
-   3. CAROUSEL LOGIC
+   3. MOMENTS MARQUEE — auto-scroll + drag
    ========================================= */
-const carouselTrack = document.querySelector(".carousel-track");
-const slidesCollection = document.querySelectorAll(".carousel-slide");
-const nextBtn = document.querySelector(".next-btn");
-const prevBtn = document.querySelector(".prev-btn");
+const marquee = document.getElementById("moments-marquee");
+const track = document.getElementById("moments-track");
 
-if (carouselTrack && slidesCollection.length > 0) {
-    let currentIndex = 0;
-    let slideInterval = setInterval(startAutoSlide, 4000);
+if (marquee && track) {
+    // Duplicar las tarjetas para lograr un loop infinito sin saltos
+    track.innerHTML += track.innerHTML;
 
-    function startAutoSlide() {
-        currentIndex++;
-        updateCarouselPosition();
+    let offset = 0;
+    let isDragging = false;
+    let startX = 0;
+    let startOffset = 0;
+    let autoSpeed = 0.45; // px por frame — velocidad del auto-scroll
+    let halfWidth = track.scrollWidth / 2;
+
+    function recalcHalfWidth() {
+        halfWidth = track.scrollWidth / 2;
+    }
+    window.addEventListener("resize", recalcHalfWidth);
+
+    function applyOffset() {
+        // Loop infinito: cuando pasa la mitad (duplicado), reinicia sin salto visible
+        if (offset >= halfWidth) offset -= halfWidth;
+        if (offset < 0) offset += halfWidth;
+        track.style.transform = `translateX(-${offset}px)`;
     }
 
-    function resetSlideInterval() {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(startAutoSlide, 4000);
-    }
-
-    function updateCarouselPosition() {
-        if (currentIndex > slidesCollection.length - 1) {
-            currentIndex = 0;
-        } else if (currentIndex < 0) {
-            currentIndex = slidesCollection.length - 1;
+    function tick() {
+        if (!isDragging) {
+            offset += autoSpeed;
+            applyOffset();
         }
-        carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+        requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+
+    function dragStart(clientX) {
+        isDragging = true;
+        startX = clientX;
+        startOffset = offset;
+        marquee.classList.add("is-dragging");
     }
 
-    nextBtn.addEventListener("click", () => {
-        currentIndex++;
-        resetSlideInterval();
-        updateCarouselPosition();
-    });
+    function dragMove(clientX) {
+        if (!isDragging) return;
+        const delta = clientX - startX;
+        offset = startOffset - delta;
+        applyOffset();
+    }
 
-    prevBtn.addEventListener("click", () => {
-        currentIndex--;
-        resetSlideInterval();
-        updateCarouselPosition();
-    });
+    function dragEnd() {
+        isDragging = false;
+        marquee.classList.remove("is-dragging");
+    }
+
+    // Mouse
+    marquee.addEventListener("mousedown", (e) => dragStart(e.clientX));
+    window.addEventListener("mousemove", (e) => dragMove(e.clientX));
+    window.addEventListener("mouseup", dragEnd);
+    marquee.addEventListener("mouseleave", dragEnd);
+
+    // Touch
+    marquee.addEventListener("touchstart", (e) => dragStart(e.touches[0].clientX), { passive: true });
+    marquee.addEventListener("touchmove", (e) => dragMove(e.touches[0].clientX), { passive: true });
+    marquee.addEventListener("touchend", dragEnd);
+}
+
+/* =========================================
+   3b. ABOUT IMAGE — parallax sutil con scroll
+   ========================================= */
+const aboutImage = document.querySelector(".about-image");
+
+if (aboutImage) {
+    window.addEventListener("scroll", () => {
+        const rect = aboutImage.getBoundingClientRect();
+        const viewportCenter = window.innerHeight / 2;
+        const distanceFromCenter = (rect.top + rect.height / 2) - viewportCenter;
+        // Movimiento muy sutil: máximo ~14px de desplazamiento vertical
+        const translateY = Math.max(-14, Math.min(14, distanceFromCenter * -0.04));
+        aboutImage.style.transform = `translateY(${translateY}px)`;
+    }, { passive: true });
 }
 
 /* =========================================
@@ -82,6 +124,7 @@ const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightbox-image");
 const lightboxClose = document.getElementById("lightbox-close");
 const galleryItems = document.querySelectorAll(".gallery-item");
+const momentImages = document.querySelectorAll(".moment-card img");
 
 function openLightbox(src, alt) {
     lightboxImage.src = src;
@@ -102,16 +145,26 @@ if (lightbox && galleryItems.length > 0) {
 
     lightboxClose.addEventListener("click", closeLightbox);
 
-    // Cerrar al hacer click en el fondo oscuro (no en la imagen)
     lightbox.addEventListener("click", (e) => {
         if (e.target === lightbox) closeLightbox();
     });
 
-    // Cerrar con la tecla Escape
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && lightbox.classList.contains("is-open")) {
             closeLightbox();
         }
+    });
+}
+
+// Las tarjetas del marquee también abren el lightbox (clic simple, sin interferir con el drag)
+if (lightbox && momentImages.length > 0) {
+    momentImages.forEach((img) => {
+        let moved = false;
+        img.closest(".moment-card").addEventListener("mousedown", () => { moved = false; });
+        img.closest(".moment-card").addEventListener("mousemove", () => { moved = true; });
+        img.closest(".moment-card").addEventListener("click", () => {
+            if (!moved) openLightbox(img.src, img.alt);
+        });
     });
 }
 
