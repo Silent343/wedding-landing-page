@@ -1,0 +1,19 @@
+{
+  "name": "elite-events-iquitos-landing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Landing segura de ÉLITE Event's Iquitos",
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env server.js",
+    "start": "node --env-file=.env server.js",
+    "check": "node --check server.js && node --check main.js",
+    "optimize:images": "node scripts/optimize-images.mjs"
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.4"
+  }
+}

@@ -1,281 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Andrea Torres Salas, Wedding Planner en Perú. Organización de bodas a tu medida: del primer boceto al último brindis."/>
-    <meta name="keywords" content="organizadora de bodas, wedding planner Peru, boda, planificación de bodas"/>
-    <title>Andrea Torres — Wedding Planner</title>
-
-    <link rel="icon" href="assets/logo AT (6)_page-0001.jpg">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <script src="https://kit.fontawesome.com/a1580b1b63.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ÉLITE Event's Iquitos diseña, planifica y coordina bodas con intención en Iquitos, Perú.">
+  <meta name="author" content="ÉLITE Event's Iquitos">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f8f3ec">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:title" content="ÉLITE Event's Iquitos — Wedding & Event Planner">
+  <meta property="og:description" content="Diseñamos, planificamos y coordinamos celebraciones con intención en Iquitos, Perú.">
+  <meta property="og:image" content="/assets/banner.webp">
+  <meta property="og:image:alt" content="Anillo de compromiso sobre un ramo de rosas rojas">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ÉLITE Event's Iquitos">
+  <meta name="twitter:description" content="Celebraciones con alma, hechas para recordar.">
+  <meta name="twitter:image" content="/assets/banner.webp">
+  <title>ÉLITE Event's Iquitos — Wedding & Event Planner</title>
+  <link rel="icon" href="assets/Logo.webp" type="image/webp">
+  <link rel="preload" href="assets/banner.webp" as="image" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header class="site-header">
-        <nav class="navbar">
-            <a href="#home" class="brand-mark">Andrea Torres</a>
-
-            <button class="mobile-menu-toggle" aria-label="Abrir menú">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-
-            <ul class="nav-links">
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#gallery">Galería</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-
-            <span class="nav-badge">Wedding Planner</span>
-        </nav>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="hero-bg-images">
-            <img class="bg-img bg-img--blurred" src="assets/profile2.jpg" alt="">
-            <img class="bg-img bg-img--clear" src="assets/profile3.jpg" alt="Andrea Torres acomodando el velo de una novia">
-            <img class="bg-img bg-img--blurred" src="assets/profile4.jpg" alt="">
-        </div>
-        <div class="hero-overlay"></div>
-
-        <div class="hero-content animate__animated animate__fadeIn">
-            <p class="hero-eyebrow">Organización de bodas en Perú</p>
-            <h1 class="hero-title">
-                Hola, soy<br>
-                <span class="hero-name">Andrea Torres</span>
-            </h1>
-            <p class="hero-tagline">Cada boda tiene una historia. Yo me encargo de que la tuya se cuente sin un solo detalle fuera de lugar.</p>
-            <a href="#contact" class="btn-primary">Cuéntame tu fecha</a>
-        </div>
-
-        <img class="hero-logo" src="assets/logo_AT__6.png" alt="Logo WeddingAT">
-    </section>
-
-    <section class="thread-divider" aria-hidden="true">
-        <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
-            <path d="M0,30 C 200,5 300,55 500,30 C 700,5 800,55 1000,30 C 1100,18 1150,40 1200,30" />
-        </svg>
-    </section>
-
-    <section class="about">
-        <div class="decor-blobs decor-blobs--about" aria-hidden="true">
-            <svg viewBox="0 0 680 420" preserveAspectRatio="xMidYMid slice">
-                <path class="blob-shape blob-b" d="M470,110 C465,55 530,30 575,55 C620,80 615,150 565,165 C515,180 475,160 470,110 Z" />
-            </svg>
-        </div>
-
-        <div class="about-container">
-            <div class="about-image-wrapper">
-                <img class="about-image" src="assets/prt5.jpg" alt="Andrea Torres, wedding planner">
-            </div>
-            <div class="about-description animate__animated animate__fadeIn">
-                <p class="about-quote">"Llegué para ayudarte a cumplir la boda que imaginaste."</p>
-                <p class="about-text">Desde el zapato hasta la recepción, cada decisión cuenta. Te acompaño en todo el proceso con ideas que se ajustan a tu estilo, tu presupuesto y tu historia — para que el día de la boda solo tengas que disfrutar.</p>
-                <ul class="about-highlights">
-                    <li><i class="fa-solid fa-heart" aria-hidden="true"></i> Asesoría personalizada de inicio a fin</li>
-                    <li><i class="fa-solid fa-heart" aria-hidden="true"></i> Proveedores de confianza en todo Perú</li>
-                    <li><i class="fa-solid fa-heart" aria-hidden="true"></i> Acompañamiento el día del evento</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="moments-wrapper">
-            <p class="section-eyebrow">Momentos que hemos vivido juntas</p>
-            <div class="moments-marquee" id="moments-marquee">
-                <div class="moments-track" id="moments-track">
-                    <div class="moment-card"><img src="assets/iuanf (1).jpeg" alt="Momento de boda" loading="lazy"></div>
-                    <div class="moment-card moment-card--tall"><img src="assets/va5R.jpeg" alt="Momento de boda" loading="lazy"></div>
-                    <div class="moment-card"><img src="assets/iuanf (5).jpg" alt="Momento de boda" loading="lazy"></div>
-                    <div class="moment-card moment-card--tall"><img src="assets/iuanf (2).jpg" alt="Momento de boda" loading="lazy"></div>
-                    <div class="moment-card"><img src="assets/bo98 (1).jpg" alt="Momento de boda" loading="lazy"></div>
-                    <div class="moment-card moment-card--tall"><img src="assets/prt89.jpg" alt="Momento de boda" loading="lazy"></div>
-                </div>
-            </div>
-            <p class="moments-hint"><i class="fa-solid fa-arrows-left-right" aria-hidden="true"></i> Arrastra para explorar</p>
-        </div>
-    </section>
-
-    <section class="process">
-        <div class="decor-blobs decor-blobs--process" aria-hidden="true">
-            <svg viewBox="0 0 680 420" preserveAspectRatio="xMidYMid slice">
-                <path class="blob-shape blob-a" d="M70,130 C70,70 130,40 180,55 C230,70 250,120 220,170 C190,220 110,225 80,185 C55,150 65,150 70,130 Z" />
-                <path class="blob-shape blob-b" d="M470,110 C465,55 530,30 575,55 C620,80 615,150 565,165 C515,180 475,160 470,110 Z" />
-                <path class="blob-shape blob-c" d="M555,350 C552,320 585,300 615,315 C645,330 645,370 615,385 C585,400 558,380 555,350 Z" />
-            </svg>
-        </div>
-
-        <p class="section-eyebrow process-eyebrow">Cómo trabajamos</p>
-        <h2 class="process-title">De la primera idea al último brindis</h2>
-
-        <div class="process-steps">
-            <div class="process-step">
-                <span class="process-number">01</span>
-                <h3 class="process-step-title">Primera llamada</h3>
-                <p class="process-step-text">Conversamos sobre tu visión, presupuesto y estilo. Sin compromiso — solo para conocernos.</p>
-            </div>
-            <div class="process-step">
-                <span class="process-number">02</span>
-                <h3 class="process-step-title">Propuesta y plan</h3>
-                <p class="process-step-text">Diseño un plan a tu medida: proveedores, cronograma y presupuesto detallado por partida.</p>
-            </div>
-            <div class="process-step">
-                <span class="process-number">03</span>
-                <h3 class="process-step-title">Coordinación total</h3>
-                <p class="process-step-text">Gestiono cada proveedor, contrato y detalle. Tú apruebas, yo me encargo del resto.</p>
-            </div>
-            <div class="process-step">
-                <span class="process-number">04</span>
-                <h3 class="process-step-title">El gran día</h3>
-                <p class="process-step-text">Estoy presente desde el montaje hasta el cierre, resolviendo cualquier imprevisto en silencio.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery" class="gallery">
-        <div class="gallery-container">
-            <p class="section-eyebrow">Portafolio</p>
-            <h2 class="gallery-title animate__animated animate__fadeIn">Bodas que hemos hecho realidad</h2>
-
-            <div class="gallery-grid">
-                <img class="gallery-item scroll-reveal-item" src="assets/bo98 (1).jpg" alt="Boda — galería">
-                <img class="gallery-item scroll-reveal-item" src="assets/bo98 (2).jpg" alt="Boda — galería">
-                <img class="gallery-item gallery-item--wide scroll-reveal-item" src="assets/iuanf (1).jpeg" alt="Boda — galería">
-                <img class="gallery-item scroll-reveal-item" src="assets/iuanf (2).jpeg" alt="Boda — galería">
-                <img class="gallery-item scroll-reveal-item" src="assets/iuanf (3).jpeg" alt="Boda — galería">
-                <img class="gallery-item gallery-item--wide scroll-reveal-item" src="assets/iuanf (3).jpg" alt="Boda — galería">
-                <img class="gallery-item scroll-reveal-item" src="assets/iuanf (4).jpg" alt="Boda — galería">
-                <img class="gallery-item scroll-reveal-item" src="assets/35345dgsg.jpeg" alt="Boda — galería">
-                <img class="gallery-item scroll-reveal-item" src="assets/prt89.jpg" alt="Boda — galería">
-                <img class="gallery-item gallery-item--tall scroll-reveal-item" src="assets/profile4.jpg" alt="Boda — galería">
-                <img class="gallery-item scroll-reveal-item" src="assets/profile2.jpg" alt="Boda — galería">
-                <img class="gallery-item scroll-reveal-item" src="assets/loiuanf (1).jpg" alt="Boda — galería">
-            </div>
-
-            <div class="social-section">
-                <p class="section-eyebrow">Síguenos</p>
-                <ul class="social-links">
-                    <li><a href="https://www.instagram.com/atorres_weddingplanner/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
-                    <li><a href="https://www.facebook.com/profile.php?id=100064006771674" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="decor-blobs decor-blobs--contact" aria-hidden="true">
-            <svg viewBox="0 0 680 420" preserveAspectRatio="xMidYMid slice">
-                <path class="blob-shape blob-d" d="M250,320 C245,270 300,240 350,250 C400,260 420,310 395,350 C370,390 300,395 270,365 C245,340 250,340 250,320 Z" />
-                <path class="blob-shape blob-a" d="M10,330 C0,210 130,140 240,175 C350,210 390,330 320,400 C250,470 80,460 30,400 C-5,360 12,360 10,330 Z" />
-                <path class="blob-shape blob-b" d="M530,60 C525,15 580,-5 615,15 C650,35 648,85 608,100 C568,115 535,95 530,60 Z" />
-            </svg>
-        </div>
-
-        <div class="contact-container animate__animated animate__fadeIn">
-            <div class="contact-intro">
-                <p class="section-eyebrow">Empecemos a planear</p>
-                <h2 class="form-title">Cuéntame los detalles de tu boda</h2>
-                <p class="form-subtitle">Completa el formulario y te escribiré en menos de 24 horas para coordinar una primera llamada, sin compromiso.</p>
-            </div>
-
-            <form class="contact-form" action="https://formsubmit.co/Andrea.torres.salas@outlook.com" method="POST">
-                <div class="form-row">
-                    <div class="form-field">
-                        <label class="form-label" for="fname">Nombre</label>
-                        <input class="form-input" id="fname" type="text" name="fname" placeholder="Tu nombre" required>
-                    </div>
-                    <div class="form-field">
-                        <label class="form-label" for="lname">Apellido</label>
-                        <input class="form-input" id="lname" type="text" name="lname" placeholder="Tu apellido" required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-field">
-                        <label class="form-label" for="phone">N. celular</label>
-                        <input class="form-input" id="phone" type="text" name="phone" placeholder="+51 999 999 999" required>
-                    </div>
-                    <div class="form-field">
-                        <label class="form-label" for="age">Edad</label>
-                        <input class="form-input" type="number" id="age" name="age" min="18" max="100" placeholder="Edad" required>
-                    </div>
-                </div>
-
-                <div class="form-field">
-                    <label class="form-label" for="email">Email</label>
-                    <input class="form-input" placeholder="tucorreo@email.com" type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Incluye un @ y un dominio válido" required>
-                </div>
-
-                <div class="form-field">
-                    <label class="form-label" for="wedding-date">Fecha estimada de la boda</label>
-                    <input class="form-input form-input--date" id="wedding-date" type="date" name="wedding_date">
-                </div>
-
-                <div class="form-field">
-                    <label class="form-label" for="details">Cuéntame sobre la boda que imaginas</label>
-                    <textarea class="form-textarea" id="details" rows="5" name="details" placeholder="Estilo, número de invitados, locación soñada, presupuesto aproximado..."></textarea>
-                </div>
-
-                <div class="form-loader" aria-hidden="true"><div></div></div>
-
-                <button class="submit-btn" type="submit">
-                    <span>Enviar mensaje</span>
-                    <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <div class="lightbox" id="lightbox">
-        <!-- Nuevo fondo dinámico para el blur premium -->
-        <div class="lightbox-bg" id="lightbox-bg"></div>
-        
-        <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar imagen">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-        <img class="lightbox-image" id="lightbox-image" src="" alt="">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header" id="inicio">
+    <div class="header-inner">
+      <a class="brand" href="#inicio" aria-label="ÉLITE Event's Iquitos, inicio">
+        <img src="assets/Logo.webp" alt="" width="52" height="52">
+        <span><strong>ÉLITE</strong><small>Event's Iquitos</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><span class="sr-only">Abrir menú</span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+        <a href="#propuesta">Nosotros</a><a href="#servicios">Servicios</a><a href="#portafolio">Portafolio</a><a href="#contacto">Contacto</a>
+      </nav>
+      <a class="button button--small header-cta" href="#contacto">Agenda una consulta</a>
     </div>
+  </header>
 
-    <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <p class="footer-name">Andrea Torres</p>
-                <p class="footer-role">Wedding Planner</p>
-                <p class="footer-quote">Que el tiempo los encuentre siempre juntos.</p>
-            </div>
+  <main id="contenido">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> Wedding & event planner · Iquitos</p>
+        <h1 id="hero-title">Celebraciones con <em>alma</em>, hechas para recordar.</h1>
+        <p class="hero-lead">Diseñamos, planificamos y coordinamos cada detalle para que vivas tu historia sin prisas, sin estrés y con absoluta confianza.</p>
+        <div class="hero-actions"><a class="button" href="#contacto">Empezar a planear</a><a class="text-link" href="#portafolio">Explorar celebraciones <span aria-hidden="true">↗</span></a></div>
+        <dl class="hero-facts" aria-label="Nuestra forma de trabajar">
+          <div><dt>01</dt><dd>Diseño a medida</dd></div><div><dt>02</dt><dd>Acompañamiento real</dd></div><div><dt>03</dt><dd>Ejecución impecable</dd></div>
+        </dl>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image-wrap"><img src="assets/banner.webp" alt="Anillo de compromiso sobre un ramo de rosas rojas" width="960" height="1280" fetchpriority="high"></div>
+        <div class="hero-seal" aria-hidden="true"><span>HECHO CON</span><strong>♡</strong><span>EN IQUITOS</span></div>
+        <div class="hero-note"><span class="hero-note-line"></span><p>El comienzo de una historia merece sentirse tan especial como el gran día.</p></div>
+      </div>
+    </section>
 
-            <div class="footer-block">
-                <p class="footer-heading">Contacto</p>
-                <p class="footer-line"><i class="fa-solid fa-phone" aria-hidden="true"></i> +51 999 999 999</p>
-                <p class="footer-line"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Lima, Perú</p>
-                <p class="footer-line"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Andrea.torres.salas@outlook.com</p>
-            </div>
+    <section class="manifesto" aria-label="Nuestra promesa"><p>Celebraciones honestas,</p><p><em>detalles que hablan de ustedes.</em></p></section>
 
-            <div class="footer-block">
-                <p class="footer-heading">Redes</p>
-                <ul class="footer-social">
-                    <li><a href="https://www.instagram.com/atorres_weddingplanner/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
-                    <li><a href="https://www.facebook.com/profile.php?id=100064006771674" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
-                </ul>
-            </div>
+    <section class="story section" id="propuesta" aria-labelledby="story-title">
+      <div class="story-media reveal">
+        <img src="assets/aaaaa.webp" alt="Equipo de ÉLITE junto a una pareja el día de su boda" width="908" height="1280" loading="lazy" decoding="async">
+        <p class="image-caption">Detrás de cada celebración hay escucha, criterio y mucho corazón.</p>
+      </div>
+      <div class="story-copy reveal">
+        <p class="eyebrow"><span></span> Nuestra manera de hacer</p>
+        <h2 id="story-title">Tu historia marca el rumbo. Nosotras cuidamos el camino.</h2>
+        <p>Desde la primera conversación hasta el último abrazo de la noche, transformamos tus ideas en una experiencia coherente, personal y serena.</p>
+        <div class="values-list">
+          <article><span>01</span><div><h3>Planificación cercana</h3><p>Un proceso claro, organizado y construido alrededor de tus prioridades.</p></div></article>
+          <article><span>02</span><div><h3>Diseño con intención</h3><p>Cada color, textura y detalle responde a una misma historia visual.</p></div></article>
+          <article><span>03</span><div><h3>Presencia de principio a fin</h3><p>Coordinamos personas, tiempos e imprevistos para que tú solo disfrutes.</p></div></article>
         </div>
+      </div>
+    </section>
 
-        <div class="footer-bottom">
-            <p>© <span id="current-year"></span> Andrea Torres Salas — Wedding Planner. Todos los derechos reservados.</p>
+    <section class="services section" id="servicios" aria-labelledby="services-title">
+      <div class="section-heading reveal">
+        <div><p class="eyebrow"><span></span> Servicios</p><h2 id="services-title">El soporte que tu celebración necesita.</h2></div>
+        <p>Elige el nivel de acompañamiento y construiremos una propuesta ajustada a tu fecha, estilo y prioridades.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card reveal"><p class="service-number">01</p><h3>Planificación integral</h3><p>Diseñamos y gestionamos la celebración completa, desde el concepto hasta el cierre.</p><ul><li>Concepto y dirección creativa</li><li>Presupuesto y proveedores</li><li>Producción y coordinación total</li></ul><a href="#contacto">Quiero este servicio <span aria-hidden="true">→</span></a></article>
+        <article class="service-card service-card--featured reveal"><p class="service-kicker">Más elegido</p><p class="service-number">02</p><h3>Coordinación del día</h3><p>Tomamos el control de la agenda y el equipo para que todo fluya como fue planeado.</p><ul><li>Revisión previa del evento</li><li>Cronograma y confirmaciones</li><li>Supervisión de inicio a fin</li></ul><a href="#contacto">Quiero este servicio <span aria-hidden="true">→</span></a></article>
+        <article class="service-card reveal"><p class="service-number">03</p><h3>Diseño y ambientación</h3><p>Construimos una atmósfera memorable y cuidamos su ejecución en cada rincón.</p><ul><li>Paleta y concepto visual</li><li>Styling de espacios</li><li>Montaje y desmontaje</li></ul><a href="#contacto">Quiero este servicio <span aria-hidden="true">→</span></a></article>
+      </div>
+    </section>
+
+    <section class="portfolio section" id="portafolio" aria-labelledby="portfolio-title">
+      <div class="portfolio-heading reveal"><p class="eyebrow eyebrow--light"><span></span> Historias reales</p><h2 id="portfolio-title">Momentos que merecen quedarse.</h2><p>Una selección de celebraciones diseñadas y coordinadas en Iquitos.</p></div>
+      <div class="filter-bar" role="group" aria-label="Filtrar portafolio">
+        <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Todo <span id="count-all"></span></button>
+        <button class="filter-button" type="button" data-filter="image" aria-pressed="false">Fotografías <span id="count-images"></span></button>
+        <button class="filter-button" type="button" data-filter="video" aria-pressed="false">Videos <span id="count-videos"></span></button>
+      </div>
+      <div class="media-grid" id="media-grid" aria-live="polite"></div>
+      <div class="portfolio-more"><button class="button button--outline-light" id="load-more" type="button">Ver más momentos</button></div>
+    </section>
+
+    <section class="contact section" id="contacto" aria-labelledby="contact-title">
+      <div class="contact-intro reveal">
+        <p class="eyebrow"><span></span> Hablemos de tu fecha</p><h2 id="contact-title">Tu celebración puede empezar aquí.</h2><p>Cuéntanos lo esencial. Te responderemos para conocerte, resolver tus dudas y preparar el siguiente paso.</p>
+        <address><a href="tel:+51999999999">+51 999 999 999</a><a href="mailto:Andrea.torres.salas@outlook.com">Andrea.torres.salas@outlook.com</a><span>Iquitos, Perú</span></address>
+      </div>
+      <form class="contact-form reveal" action="/api/contact" method="post" novalidate>
+        <div class="form-row">
+          <div class="form-field"><label for="contact-name">Nombre</label><input id="contact-name" type="text" name="name" autocomplete="name" placeholder="Tu nombre" maxlength="80" aria-describedby="name-error"><span class="field-error" id="name-error"></span></div>
+          <div class="form-field"><label for="contact-phone">Celular</label><input id="contact-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="+51 999 999 999" maxlength="20" aria-describedby="phone-error"><span class="field-error" id="phone-error"></span></div>
         </div>
-    </footer>
+        <div class="form-row">
+          <div class="form-field"><label for="contact-email">Email</label><input id="contact-email" type="email" name="email" autocomplete="email" inputmode="email" placeholder="tu@email.com" maxlength="120" aria-describedby="email-error"><span class="field-error" id="email-error"></span></div>
+          <div class="form-field"><label for="contact-date">Fecha estimada</label><input id="contact-date" type="date" name="date" aria-describedby="date-error"><span class="field-error" id="date-error"></span></div>
+        </div>
+        <div class="form-field"><label for="contact-message">Cuéntanos sobre tu celebración</label><textarea id="contact-message" name="message" rows="4" placeholder="Tipo de celebración, número de invitados, estilo o cualquier idea que quieras compartir…" minlength="20" maxlength="1200" aria-describedby="message-error"></textarea><span class="field-error" id="message-error"></span></div>
+        <div class="honeypot" aria-hidden="true"><label for="contact-website">Sitio web</label><input id="contact-website" type="text" name="website" tabindex="-1" autocomplete="off"></div>
+        <div class="consent-field"><label class="consent" for="contact-consent"><input id="contact-consent" name="consent" type="checkbox" aria-describedby="consent-error"><span>Acepto que mis datos sean usados únicamente para responder esta consulta.</span></label><span class="field-error" id="consent-error"></span></div>
+        <button class="button form-submit" type="submit"><span class="submit-label">Enviar consulta</span><span aria-hidden="true">↗</span></button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
 
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="main.js"></script>
+  <footer class="site-footer">
+    <div class="footer-main"><a class="footer-brand" href="#inicio"><img src="assets/Logo.webp" alt="ÉLITE Event's Iquitos" width="120" height="115" loading="lazy" decoding="async"></a><p>Creamos celebraciones que se sienten profundamente tuyas.</p><div class="footer-nav"><a href="#propuesta">Nosotros</a><a href="#servicios">Servicios</a><a href="#portafolio">Portafolio</a><a href="#contacto">Contacto</a></div><div class="footer-social"><a href="https://www.instagram.com/atorres_weddingplanner/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.facebook.com/profile.php?id=100064006771674" target="_blank" rel="noopener noreferrer">Facebook ↗</a></div></div>
+    <div class="footer-bottom"><span>© <span id="current-year"></span> ÉLITE Event's Iquitos</span><span>Iquitos, Perú</span></div>
+  </footer>
 
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-location">
+    <div class="lightbox-topbar"><div><p id="lightbox-type">Fotografía</p><h2 id="lightbox-location">Iquitos, Perú</h2></div><button class="lightbox-close" type="button" aria-label="Cerrar vista">×</button></div>
+    <div class="lightbox-stage" id="lightbox-stage"></div><p class="lightbox-caption">Una celebración cuidada en cada detalle por ÉLITE Event's Iquitos.</p>
+  </dialog>
+  <section class="cookie-banner" id="cookie-banner" aria-labelledby="cookie-title" hidden>
+    <div><p class="cookie-kicker">Tu privacidad</p><h2 id="cookie-title">Cookies bajo tu control.</h2><p>Usamos almacenamiento esencial para proteger el formulario y recordar tu preferencia. No cargamos analítica ni publicidad sin tu permiso.</p></div>
+    <div class="cookie-actions"><button class="button button--cookie" type="button" data-cookie-choice="all">Aceptar</button><button class="cookie-secondary" type="button" data-cookie-choice="essential">Solo esenciales</button></div>
+  </section>
+  <noscript><p class="noscript">Activa JavaScript para explorar y filtrar la galería.</p></noscript>
+  <script src="main.js" defer></script>
 </body>
 </html>
