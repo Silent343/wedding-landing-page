@@ -196,7 +196,7 @@ const handleContact = async (req, res) => {
 
 const allowedStaticPath = (pathname) => {
   if (pathname === "/") return path.join(ROOT, "index.html");
-  if (["/style.css", "/main.js", "/robots.txt"].includes(pathname)) return path.join(ROOT, pathname.slice(1));
+  if (["/style.css", "/main.js", "/robots.txt", "/privacidad.html", "/terminos.html"].includes(pathname)) return path.join(ROOT, pathname.slice(1));
   if (!pathname.startsWith("/assets/")) return null;
   let decoded;
   try { decoded = decodeURIComponent(pathname); } catch { return null; }
