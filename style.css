@@ -143,9 +143,9 @@ button { color: inherit; }
 .video-badge { position: absolute; z-index: 3; top: 14px; left: 14px; padding: 7px 10px; border-radius: 100px; background: rgba(28,17,16,.72); backdrop-filter: blur(8px); font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
 .hero-image-wrap, .story-media-frame, .media-card, .lightbox-media-wrap { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
 .hero-image-wrap img, .story-media-frame img, .media-card img, .media-card video, .lightbox-media-wrap img, .lightbox-media-wrap video { -webkit-user-drag: none; }
-.media-watermark { position: absolute; z-index: 2; top: 50%; left: 50%; padding: 8px 12px; border: 1px solid rgba(255,255,255,.34); background: rgba(35,18,19,.18); color: rgba(255,255,255,.62); backdrop-filter: blur(1.5px); font-size: clamp(10px,1.2vw,14px); font-weight: 600; letter-spacing: .18em; white-space: nowrap; pointer-events: none; text-shadow: 0 1px 7px rgba(0,0,0,.45); transform: translate(-50%,-50%) rotate(-18deg); }
-.media-watermark--static { top: auto; left: auto; right: 14px; bottom: 14px; padding: 6px 9px; font-size: 10px; transform: none; }
-.media-watermark--lightbox { font-size: clamp(11px,1.5vw,16px); }
+.media-watermark { position: absolute; z-index: 2; top: 12px; right: 12px; padding: 5px 8px; border: 1px solid rgba(255,255,255,.28); border-radius: 2px; background: rgba(35,18,19,.34); color: rgba(255,255,255,.78); backdrop-filter: blur(3px); font-size: 9px; font-weight: 600; letter-spacing: .13em; white-space: nowrap; pointer-events: none; text-shadow: 0 1px 5px rgba(0,0,0,.42); }
+.media-watermark--static { top: auto; right: 12px; bottom: 12px; padding: 5px 8px; font-size: 9px; }
+.media-watermark--lightbox { top: auto; right: 18px; bottom: 18px; font-size: 10px; }
 .portfolio-more { margin-top: 35px; display: flex; justify-content: center; }
 .button--outline-light { border-color: rgba(255,255,255,.55); background: transparent; }
 .button--outline-light:hover { border-color: var(--white); background: var(--white); color: var(--wine-deep); }
