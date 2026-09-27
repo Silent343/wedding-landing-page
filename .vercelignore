@@ -6,3 +6,5 @@ node_modules
 scripts
 server.js
 SECURITY.md
+assets/*.jpeg
+assets/*.jpg

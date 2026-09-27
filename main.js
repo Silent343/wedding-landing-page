@@ -1,56 +1,32 @@
 const asset = (name) => `assets/${name}`;
 
 const portfolioMedia = [
-  { type: "image", src: asset("WhatsApp Image 2026-09-17 at 11.34.13 PM.webp") },
-  { type: "image", src: asset("WhatsApp Image 2026-09-17 at 11.34.11 PM.webp") },
-  { type: "video", src: asset("b.mp4") },
-  { type: "image", src: asset("WhatsApp Image 2026-09-17 at 11.35.41 PMb.webp") },
-  { type: "image", src: asset("WhatsApp Image 2026-09-17 at 11.34.14 PM.webp") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.34.08 PM.mp4") },
-  { type: "image", src: asset("WhatsApp Image 2026-09-17 at 11.21.37 PM.webp") },
-  { type: "image", src: asset("WhatsApp Image 2026-09-17 at 11.35.41 PMa.webp") },
-  { type: "image", src: asset("WhatsApp Image 2026-09-17 at 11.35.42 PMa.webp") },
-  { type: "video", src: asset("gg.mp4") },
-  { type: "image", src: asset("WhatsApp Image 2026-09-17 at 11.36.17 PMc.webp") },
-  { type: "image", src: asset("WhatsApp Image 2026-09-17 at 11.36.38 PM.webp") },
-  { type: "image", src: asset("WhatsApp Image 2026-09-17 at 11.34.12 PM.webp") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.35.35 PM.mp4") },
-  { type: "image", src: asset("WhatsApp Image 2026-09-17 at 11.35.37 PM.webp") },
-  { type: "image", src: asset("WhatsApp Image 2026-09-17 at 11.35.41 PM.webp") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.35.40 PM.mp4") },
-  { type: "image", src: asset("WhatsApp Image 2026-09-17 at 11.35.41 PMg.webp") },
-  { type: "image", src: asset("WhatsApp Image 2026-09-17 at 11.36.17 PMa.webp") },
-  { type: "image", src: asset("WhatsApp Image 2026-09-17 at 11.36.55 PM.webp") },
-  { type: "image", src: asset("WhatsApp Image 2026-09-17 at 11.38.05 PM.webp") },
-  { type: "image", src: asset("WhatsApp Image 2026-09-17 at 11.35.37 PMd.webp") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.35.47 PMx.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.35.54 PMf.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.36.01 PMa.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.36.02 PMg.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.36.03 PMs.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.36.10 PMf.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.36.13 PMs.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.36.16 PMa.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.36.29 PMx.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.36.32 PMs.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.36.37 PM.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.36.49 PMf.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.36.52 PMa.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.36.57 PMx.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.37.11 PMggg.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.37.16 PM.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.37.19 PM.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.37.21 PM.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.37.23 PM.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.37.26 PM.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.37.59 PM.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.38.02 PM.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.38.04 PM.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.38.09 PM.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.38.16 PM.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.42.00 PM.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.42.08 PM.mp4") },
-  { type: "video", src: asset("WhatsApp Video 2026-09-17 at 11.47.58 PM.mp4") }
+  { type: "image", src: asset("elite-eventos-iquitos-foto-01.webp") },
+  { type: "image", src: asset("elite-eventos-iquitos-foto-02.webp") },
+  { type: "video", src: asset("elite-eventos-iquitos-video-01.mp4") },
+  { type: "image", src: asset("elite-eventos-iquitos-foto-03.webp") },
+  { type: "image", src: asset("elite-eventos-iquitos-foto-04.webp") },
+  { type: "video", src: asset("elite-eventos-iquitos-video-02.mp4") },
+  { type: "image", src: asset("elite-eventos-iquitos-foto-05.webp") },
+  { type: "image", src: asset("elite-eventos-iquitos-foto-06.webp") },
+  { type: "image", src: asset("elite-eventos-iquitos-foto-07.webp") },
+  { type: "video", src: asset("elite-eventos-iquitos-video-03.mp4") },
+  { type: "image", src: asset("elite-eventos-iquitos-foto-08.webp") },
+  { type: "image", src: asset("elite-eventos-iquitos-foto-09.webp") },
+  { type: "image", src: asset("elite-eventos-iquitos-foto-10.webp") },
+  { type: "video", src: asset("elite-eventos-iquitos-video-04.mp4") },
+  { type: "image", src: asset("elite-eventos-iquitos-foto-11.webp") },
+  { type: "image", src: asset("elite-eventos-iquitos-foto-12.webp") },
+  { type: "video", src: asset("elite-eventos-iquitos-video-05.mp4") },
+  { type: "image", src: asset("elite-eventos-iquitos-foto-13.webp") },
+  { type: "image", src: asset("elite-eventos-iquitos-foto-14.webp") },
+  { type: "image", src: asset("elite-eventos-iquitos-foto-15.webp") },
+  { type: "image", src: asset("elite-eventos-iquitos-foto-16.webp") },
+  { type: "image", src: asset("elite-eventos-iquitos-foto-17.webp") },
+  ...Array.from({ length: 28 }, (_, index) => ({
+    type: "video",
+    src: asset(`elite-eventos-iquitos-video-${String(index + 6).padStart(2, "0")}.mp4`)
+  }))
 ];
 
 const header = document.querySelector(".site-header");
@@ -97,12 +73,16 @@ const mediaNode = (item, index) => {
     media.alt = "Celebración en Iquitos, Perú";
     media.loading = "lazy";
     media.decoding = "async";
+    media.draggable = false;
   } else {
     media = document.createElement("video");
     media.src = item.src;
     media.muted = true;
     media.playsInline = true;
     media.preload = "metadata";
+    media.controlsList = "nodownload noplaybackrate";
+    media.disablePictureInPicture = true;
+    media.disableRemotePlayback = true;
     media.setAttribute("aria-hidden", "true");
     const badge = document.createElement("span");
     badge.className = "video-badge";
@@ -112,6 +92,10 @@ const mediaNode = (item, index) => {
 
   const overlay = document.createElement("span");
   overlay.className = "media-card-overlay";
+  const watermark = document.createElement("span");
+  watermark.className = "media-watermark";
+  watermark.setAttribute("aria-hidden", "true");
+  watermark.textContent = "ÉLITE · IQUITOS";
   const meta = document.createElement("span");
   meta.className = "media-meta";
   const location = document.createElement("strong");
@@ -124,7 +108,7 @@ const mediaNode = (item, index) => {
   open.textContent = item.type === "video" ? "▶" : "↗";
   meta.append(location, kind);
   overlay.append(meta, open);
-  card.append(media, overlay);
+  card.append(media, watermark, overlay);
   return card;
 };
 
@@ -192,11 +176,22 @@ const openLightbox = (item) => {
     media.controls = true;
     media.autoplay = true;
     media.playsInline = true;
+    media.controlsList = "nodownload noplaybackrate";
+    media.disablePictureInPicture = true;
+    media.disableRemotePlayback = true;
   } else {
     media.alt = "Celebración en Iquitos, Perú";
+    media.draggable = false;
   }
+  const mediaWrap = document.createElement("div");
+  mediaWrap.className = "lightbox-media-wrap";
+  const watermark = document.createElement("span");
+  watermark.className = "media-watermark media-watermark--lightbox";
+  watermark.setAttribute("aria-hidden", "true");
+  watermark.textContent = "ÉLITE · EVENT'S IQUITOS";
+  mediaWrap.append(media, watermark);
   lightboxType.textContent = item.type === "video" ? "Video" : "Fotografía";
-  lightboxStage.replaceChildren(media);
+  lightboxStage.replaceChildren(mediaWrap);
   lightbox.showModal();
   document.body.classList.add("is-locked");
 };
@@ -210,6 +205,14 @@ grid?.addEventListener("click", (event) => {
 lightboxClose?.addEventListener("click", closeLightbox);
 lightbox?.addEventListener("click", (event) => { if (event.target === lightbox) closeLightbox(); });
 lightbox?.addEventListener("cancel", (event) => { event.preventDefault(); closeLightbox(); });
+
+const protectedMediaSelector = ".media-card, .lightbox-stage, .hero-image-wrap, .story-media-frame";
+document.addEventListener("contextmenu", (event) => {
+  if (event.target.closest(protectedMediaSelector)) event.preventDefault();
+});
+document.addEventListener("dragstart", (event) => {
+  if (event.target.closest(protectedMediaSelector)) event.preventDefault();
+});
 
 const revealObserver = "IntersectionObserver" in window
   ? new IntersectionObserver((entries, observer) => {
