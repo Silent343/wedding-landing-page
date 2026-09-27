@@ -1,8 +1,9 @@
-import { createHash } from "node:crypto";
+import { createHash, createHmac, timingSafeEqual } from "node:crypto";
 
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_REQUESTS = 5;
 const MAX_BODY_BYTES = 16 * 1024;
+const CSRF_TOKEN_TTL_SECONDS = 60 * 60;
 const rateLimitStore = globalThis.__eliteContactRateLimit ?? new Map();
 globalThis.__eliteContactRateLimit = rateLimitStore;
 
@@ -40,6 +41,45 @@ const isSameOriginRequest = (req) => {
   if (fetchSite && !["same-origin", "same-site"].includes(fetchSite)) return false;
   if (!origin) return process.env.NODE_ENV !== "production";
   return getAllowedOrigins(req).has(origin);
+};
+
+const parseCookies = (cookieHeader) => Object.fromEntries(
+  String(cookieHeader || "")
+    .split(";")
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .map((part) => {
+      const separator = part.indexOf("=");
+      const key = separator >= 0 ? part.slice(0, separator) : part;
+      const value = separator >= 0 ? part.slice(separator + 1) : "";
+      try { return [key, decodeURIComponent(value)]; } catch { return [key, value]; }
+    }),
+);
+
+const safeEqual = (left, right) => {
+  const leftBuffer = Buffer.from(String(left));
+  const rightBuffer = Buffer.from(String(right));
+  return leftBuffer.length === rightBuffer.length && timingSafeEqual(leftBuffer, rightBuffer);
+};
+
+const isValidCsrfToken = (req, body) => {
+  const secret = process.env.CSRF_SECRET || process.env.RATE_LIMIT_SECRET || process.env.RESEND_API_KEY;
+  if (!secret) return false;
+
+  const cookies = parseCookies(req.headers.cookie);
+  const headerToken = String(req.headers["x-csrf-token"] || req.headers["x-csrf"] || body.csrfToken || body._csrf || "");
+  const cookieToken = String(cookies.elite_csrf || "");
+  if (!headerToken || !cookieToken || !safeEqual(headerToken, cookieToken)) return false;
+
+  const parts = headerToken.split(".");
+  if (parts.length !== 3) return false;
+  const [nonce, issuedAtRaw, signature] = parts;
+  const issuedAt = Number(issuedAtRaw);
+  const now = Math.floor(Date.now() / 1000);
+  if (!nonce || !Number.isInteger(issuedAt) || issuedAt > now + 30 || now - issuedAt > CSRF_TOKEN_TTL_SECONDS) return false;
+
+  const expected = createHmac("sha256", secret).update(`${nonce}.${issuedAtRaw}`).digest("base64url");
+  return safeEqual(signature, expected);
 };
 
 const getIp = (req) => {
@@ -224,6 +264,9 @@ export default async function handler(req, res) {
 
   try {
     const body = parseBody(req);
+    if (!isValidCsrfToken(req, body)) {
+      return sendJson(res, 403, { ok: false, message: "La sesión del formulario venció. Recarga la página e inténtalo nuevamente." });
+    }
     const { data, errors } = validatePayload(body);
 
     if (data.website) {

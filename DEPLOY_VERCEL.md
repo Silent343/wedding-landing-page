@@ -1,6 +1,6 @@
 # Despliegue en Vercel
 
-El proyecto está preparado como sitio estático con una Vercel Function en `api/contact.js` para procesar el formulario y enviar las consultas mediante Resend.
+El proyecto está preparado como sitio estático con funciones serverless en `api/csrf.js` y `api/contact.js` para proteger el formulario y enviar las consultas mediante Resend.
 
 ## 1. Preparar Resend
 
@@ -27,6 +27,7 @@ En **Project Settings → Environment Variables**, agrega estas variables para P
 | `CONTACT_FROM` | `ÉLITE Event's Iquitos <contacto@tudominio.com>` | Sí |
 | `CONTACT_TO` | `Andrea.torres.salas@outlook.com` | Sí |
 | `RATE_LIMIT_SECRET` | una cadena aleatoria de al menos 32 caracteres | Recomendada |
+| `CSRF_SECRET` | otra cadena aleatoria de al menos 32 caracteres | Recomendada |
 | `ALLOWED_ORIGINS` | `https://tudominio.com,https://www.tudominio.com` | Opcional |
 
 Nunca agregues la API key al repositorio, a `main.js` ni a un archivo HTML.
@@ -41,6 +42,6 @@ Nunca agregues la API key al repositorio, a `main.js` ni a un archivo HTML.
 
 ## Seguridad del formulario
 
-La función valida el origen, el tipo y tamaño de la solicitud, todos los campos, el consentimiento y el honeypot; escapa el contenido incluido en el correo, aplica un límite de cinco solicitudes cada diez minutos por instancia y nunca expone la API key al navegador.
+Las funciones emiten y validan un token CSRF firmado, verifican el origen, el tipo y tamaño de la solicitud, todos los campos, el consentimiento y el honeypot; escapan el contenido incluido en el correo, aplican un límite de cinco solicitudes cada diez minutos por instancia y nunca exponen la API key al navegador.
 
 El límite incluido reduce abuso básico. Para un límite global entre todas las instancias serverless, configura además una regla de rate limiting para `/api/contact` en Vercel Firewall o conecta un almacén persistente compatible.
